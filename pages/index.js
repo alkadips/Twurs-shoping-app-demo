@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
 import data from '../utils/data';
+import Addproduct from './admin/Addproduct';
 export default function Home() {
   return (
    <Layout title="Home page">
@@ -11,7 +12,9 @@ export default function Home() {
             key={product.slug}
           ></ProductItem>
         ))}
+        
       </div>
+      <Addproduct/>
    </Layout>
   )
 }
