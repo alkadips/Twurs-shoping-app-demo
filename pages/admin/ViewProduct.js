@@ -29,13 +29,13 @@ const ViewProduct = props => (
                   props.editRow(product);
                 }}
               >
-                Edit
+                Edit Product
               </button>
               <button
                 className="button muted-button delete-button"
                 onClick={() => props.deleteUser(product.id)}
               >
-                Delete
+                Delete product
               </button>
             </td>
           </tr>

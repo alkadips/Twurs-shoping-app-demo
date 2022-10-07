@@ -23,7 +23,7 @@ const EditProduct = props => {
   };
 
   return (
-    <form style={{textAlign:"center"}}
+    <form style={{textAlign:"center",margin:'0 auto',width:"50%",border:'2px solid',padding:"20px"}}
       onSubmit={event => {
         event.preventDefault();
         if (!product.name ||!product.price||!product.category||!product.descriptions||!product.imgUpload) return;
@@ -34,7 +34,7 @@ const EditProduct = props => {
     >
         <div>
       <label>Name:</label>
-      <input style={{width:"20%",marginLeft:'10px'}}
+      <input style={{marginLeft:'10px'}}
         type="text"
         name="name"
         value={product.name}
@@ -43,7 +43,7 @@ const EditProduct = props => {
       </div>
       <div>
       <label>Price:</label>
-      <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
+      <input style={{marginLeft:'10px',marginTop:"10px"}}
         type="text"
         name="price"
         value={product.price}
@@ -52,7 +52,7 @@ const EditProduct = props => {
       </div>
       <div>
       <label>Category:</label>
-     <select style={{width:"20%",marginLeft:'10px',marginTop:"10px"}} name="category"value={product.category} onChange={handleInputChange}>
+     <select style={{marginLeft:'10px',marginTop:"10px"}} name="category"value={product.category} onChange={handleInputChange}>
      <option value=""></option>
             <option value="Laptop">Laptop</option>
             <option value="Android Phones">Android Phones</option>
@@ -61,7 +61,7 @@ const EditProduct = props => {
      </div>
      <div>
      <label>Descriptions:</label>
-     <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
+     <input style={{marginLeft:'10px',marginTop:"10px"}}
         type="text"
         name="descriptions"
         value={product.descriptions}
@@ -70,7 +70,7 @@ const EditProduct = props => {
       </div>
       <div>
        <label>Product Img:</label>
-     <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
+     <input style={{marginLeft:'10px',marginTop:"10px"}}
         type="file"
         name="imgUpload"
         value={product.imgUpload}
@@ -78,7 +78,7 @@ const EditProduct = props => {
       />
       </div>
 
-      <button className="success-button">{props.editing ? "Update Product" : "Add Product"}</button>
+      <button style={{marginTop:"10px"}}  className="success-button">{props.editing ? "Update Product" : "Add Product"}</button>
       {props.editing && (
         <button onClick={resetAddProduct} className="button muted-button">
           Cancel
