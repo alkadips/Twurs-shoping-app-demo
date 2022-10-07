@@ -33,7 +33,7 @@ const ViewProduct = props => (
               </button>
               <button
                 className="button muted-button delete-button"
-                onClick={() => props.deleteUser(product.id)}
+                onClick={() => props.deleteProduct(product.id)}
               >
                 Delete product
               </button>

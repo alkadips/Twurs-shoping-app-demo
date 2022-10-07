@@ -40,10 +40,45 @@ a {
 .view-products{
   margin-top: 20px;
 }
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-tooltip {
+  display: block;
+}
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+ .is-danger{
+  color: #dc3545;
+}
 .default-button {
   @apply rounded bg-gray-100 py-2  px-4 text-black shadow outline-none hover:bg-gray-200  active:bg-gray-300;
 }
-
+.is-fullheight{
+  margin: 0 auto;
+    text-align: center;
+    border: 1px solid;
+    padding: 20px;
+    width: 50%;
+}
+.login-button{
+  background-color: green;
+  padding: 10px;
+  width: 20%;
+  color: white;
+  margin-top: 10px;
+}
+.register-button{
+  background-color: green;
+  padding: 10px;
+  width: 20%;
+  color: white;
+  margin-top: 10px;
+}
 input,
 select,
 textarea {

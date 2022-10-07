@@ -2,6 +2,8 @@ import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
 import data from '../utils/data';
 import Addproduct from './admin/Addproduct';
+import Login from './login/Login';
+import Register from './register/Register';
 export default function Home() {
   return (
    <Layout title="Home page">
@@ -15,6 +17,8 @@ export default function Home() {
         
       </div>
       <Addproduct/>
+      <Login/>
+      <Register/>
    </Layout>
   )
 }

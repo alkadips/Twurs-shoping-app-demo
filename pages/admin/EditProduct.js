@@ -28,7 +28,7 @@ const EditProduct = props => {
         event.preventDefault();
         if (!product.name ||!product.price||!product.category||!product.descriptions||!product.imgUpload) return;
 
-        props.editing ? props.updateproduct(product.id, product) : props.addProduct(product);
+        props.editing ? props.updateProduct(product.id, product) : props.addProduct(product);
         resetAddProduct();
       }}
     >
