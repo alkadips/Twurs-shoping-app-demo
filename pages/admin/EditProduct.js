@@ -1,75 +1,86 @@
 import React, { useState, useEffect } from "react";
 
 const EditProduct = props => {
-  const initialFormState = { id: null, name: "", price: "",category:"",descriptions:"",imgUpload:"" };
-  const [user, setUser] = useState(
-    props.editing ? props.currentUser : initialFormState
+  const initialFormState = { id: null, name: "", price: "",category:[''],descriptions:"",imgUpload:"" };
+  const [product, setProduct] = useState(
+    props.editing ? props.currentProduct : initialFormState
   );
 
   const handleInputChange = event => {
     const { name, value } = event.target;
 
-    setUser({ ...user, [name]: value });
+    setProduct({ ...product, [name]: value });
   };
 
   useEffect(() => {
-    setUser(props.currentUser);
+    setProduct(props.currentProduct);
   }, [props]);
 
-  const resetAddUser = () => {
+  const resetAddProduct = () => {
     props.setEditing(false);
-    setUser(initialFormState);
-    props.setCurrentUser(initialFormState);
+    setProduct(initialFormState);
+    props.setCurrentProduct(initialFormState);
   };
 
   return (
-    <form
+    <form style={{textAlign:"center"}}
       onSubmit={event => {
         event.preventDefault();
-        if (!user.name || !user.username||!user.price||!user.category||!user.descriptions||!user.imgUpload) return;
+        if (!product.name ||!product.price||!product.category||!product.descriptions||!product.imgUpload) return;
 
-        props.editing ? props.updateUser(user.id, user) : props.addUser(user);
-        resetAddUser();
+        props.editing ? props.updateproduct(product.id, product) : props.addProduct(product);
+        resetAddProduct();
       }}
     >
-      <label>Name</label>
-      <input
+        <div>
+      <label>Name:</label>
+      <input style={{width:"20%",marginLeft:'10px'}}
         type="text"
         name="name"
-        value={user.name}
+        value={product.name}
         onChange={handleInputChange}
       />
-      <label>Username</label>
-      <input
+      </div>
+      <div>
+      <label>Price:</label>
+      <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
         type="text"
-        name="username"
-        value={user.price}
+        name="price"
+        value={product.price}
         onChange={handleInputChange}
       />
-      <label>Category</label>
-     <select name="category"value={user.category} onChange={handleInputChange}>
+      </div>
+      <div>
+      <label>Category:</label>
+     <select style={{width:"20%",marginLeft:'10px',marginTop:"10px"}} name="category"value={product.category} onChange={handleInputChange}>
      <option value=""></option>
             <option value="Laptop">Laptop</option>
             <option value="Android Phones">Android Phones</option>
             <option value="Guitars">Guitars</option>
      </select>
-     <label>Descriptions</label>
-     <input
+     </div>
+     <div>
+     <label>Descriptions:</label>
+     <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
         type="text"
         name="descriptions"
-        value={user.descriptions}
+        value={product.descriptions}
         onChange={handleInputChange}
       />
-       <label>Product Img</label>
-     <input
+      </div>
+      <div>
+       <label>Product Img:</label>
+     <input style={{width:"20%",marginLeft:'10px',marginTop:"10px"}}
         type="file"
         name="imgUpload"
-        value={user.imgUpload}
+        value={product.imgUpload}
         onChange={handleInputChange}
       />
-      <button>{props.editing ? "Update user" : "Add user"}</button>
+      </div>
+
+      <button className="success-button">{props.editing ? "Update Product" : "Add Product"}</button>
       {props.editing && (
-        <button onClick={resetAddUser} className="button muted-button">
+        <button onClick={resetAddProduct} className="button muted-button">
           Cancel
         </button>
       )}

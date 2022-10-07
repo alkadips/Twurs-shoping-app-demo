@@ -1,7 +1,7 @@
 import React from "react";
 
 const ViewProduct = props => (
-  <table>
+  <table style={{width:'100%',border:"1px solid"}}>
     <thead>
       <tr>
         <th>Name</th>
@@ -9,30 +9,31 @@ const ViewProduct = props => (
         <th>Category</th>
         <th>Descriptions</th>
         <th>Product Img</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      {props.users.length > 0 ? (
-        props.users.map(user => (
-          <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>{user.price}</td>
-            <td>{user.category}</td>
-            <td>{user.descriptions}</td>
-            <td>{user.imgUpload}</td>
+      {props.products.length > 0 ? (
+        props.products.map(product => (
+          <tr key={product.id}>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.category}</td>
+            <td>{product.descriptions}</td>
+            <td>{product.imgUpload}</td>
 
             <td>
               <button
-                className="button muted-button"
+                className="button muted-button edit-button "
                 onClick={() => {
-                  props.editRow(user);
+                  props.editRow(product);
                 }}
               >
                 Edit
               </button>
               <button
-                className="button muted-button"
-                onClick={() => props.deleteUser(user.id)}
+                className="button muted-button delete-button"
+                onClick={() => props.deleteUser(product.id)}
               >
                 Delete
               </button>
@@ -41,7 +42,7 @@ const ViewProduct = props => (
         ))
       ) : (
         <tr>
-          <td colSpan={3}>No users</td>
+          <td colSpan={3}>No Product</td>
         </tr>
       )}
     </tbody>

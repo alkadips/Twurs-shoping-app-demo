@@ -25,6 +25,21 @@ a {
 .primary-button {
   @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400  active:bg-amber-500;
 }
+.edit-button, .success-button{
+  background-color: green;
+  padding: 10px;
+  color: white;
+}
+.delete-button{
+  background-color:red;
+  padding: 10px;
+  color: white;
+  margin-left: 20px;
+
+}
+.view-products{
+  margin-top: 20px;
+}
 .default-button {
   @apply rounded bg-gray-100 py-2  px-4 text-black shadow outline-none hover:bg-gray-200  active:bg-gray-300;
 }

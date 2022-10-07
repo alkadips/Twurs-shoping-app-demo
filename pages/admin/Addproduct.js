@@ -3,37 +3,37 @@ import EditProduct from "./EditProduct";
 import ViewProduct from "./ViewProduct";
 
 const Addproduct = () => {
-  const usersData = [
-    { id: 1, name: "Tania", price: "floppydiskette",category:['laptop','Android Phones','Guitars'],descriptions:"hi",imgUpload:"" },
-    { id: 2, name: "Craig", username: "siliconeidolon",category:['laptop','Android Phones','Guitars'],descriptions:"hello",imgUpload:"" },
-    { id: 3, name: "Ben", username: "benisphere",category:['laptop','Android Phones','Guitars'],descriptions:"how are you",imgUpload:"" }
+  const productData = [
+    { id: 1, name: "Dell", price: "23",category:['laptop','Android Phones','Guitars'],descriptions:"hi",imgUpload:"" },
+    { id: 2, name: "Samsand", price: "100",category:['laptop','Android Phones','Guitars'],descriptions:"hello",imgUpload:"" },
+    { id: 3, name: "Guitar", price: "200",category:['laptop','Android Phones','Guitars'],descriptions:"how are you",imgUpload:"" }
   ];
-  const initialFormState = { id: null, name: "", username: "" };
+  const initialFormState = { id: null, name: "", price: "",category:['laptop','Android Phones','Guitars'],descriptions:"",imgUpload:"" };
 
-  const [users, setUsers] = useState(usersData);
+  const [products, setproducts] = useState(productData);
 
   const [editing, setEditing] = useState(false);
-  const [currentUser, setCurrentUser] = useState(initialFormState);
+  const [currentProduct, setcurrentProduct] = useState(initialFormState);
 
-  const addUser = user => {
-    user.id = users.length + 1;
-    setUsers([...users, user]);
+  const addProduct = product => {
+    product.id = products.length + 1;
+    setproducts([...products, product]);
   };
 
-  const deleteUser = id => {
+  const deleteProduct = id => {
     setEditing(false);
-    setUsers(users.filter(user => user.id !== id));
+    setproducts(products.filter(product => product.id !== id));
   };
 
-  const editRow = user => {
+  const editRow = product => {
     setEditing(true);
 
-    setCurrentUser(user);
+    setcurrentProduct(product);
   };
 
-  const updateUser = (id, updatedUser) => {
+  const updateProduct = (id, updatedProduct) => {
     setEditing(false);
-    setUsers(users.map(user => (user.id === id ? updatedUser : user)));
+    setproducts(products.map(product => (product.id === id ? updatedProduct : product)));
   };
 
   return (
@@ -42,20 +42,20 @@ const Addproduct = () => {
       <div className="flex-row">
         <div className="flex-large">
           <div>
-            <h2>{editing ? "Edit user" : "Add user"}</h2>
+            <button className="success-button" type="button">{editing ? "Edit Product" : "Add Product"}</button>
             <EditProduct
               editing={editing}
               setEditing={setEditing}
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-              updateUser={updateUser}
-              addUser={addUser}
+              currentProduct={currentProduct}
+              setcurrentProduct={setcurrentProduct}
+              updateProduct={updateProduct}
+              addProduct={addProduct}
             />
           </div>
         </div>
         <div className="flex-large">
-          <h2>View users</h2>
-          <ViewProduct users={users} editRow={editRow} deleteUser={deleteUser} />
+          <h2 className="view-products">View products</h2>
+          <ViewProduct products={products} editRow={editRow} deleteProduct={deleteProduct} />
         </div>
       </div>
     </div>
