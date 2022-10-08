@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Layout from "../../components/Layout";
 import EditProduct from "./EditProduct";
 import ViewProduct from "./ViewProduct";
 
@@ -68,6 +69,7 @@ const Addproduct = () => {
   };
 
   return (
+    <Layout title={"Add Product"}>
     <div className="container">
       <h1>Product Crud Operations</h1>
       <div className="flex-row">
@@ -96,6 +98,7 @@ const Addproduct = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 const ViewProduct = props => (
+  <Layout title={"Viwe Product"}>
   <table style={{width:'100%',border:"1px solid"}}>
     <thead>
       <tr>
@@ -13,7 +14,7 @@ const ViewProduct = props => (
       </tr>
     </thead>
     <tbody>
-      {props.products.length > 0 ? (
+      {props?.products?.length > 0 ? (
         props.products.map(product => (
           <tr key={product.id}>
             <td>{product.name}</td>
@@ -47,6 +48,7 @@ const ViewProduct = props => (
       )}
     </tbody>
   </table>
+  </Layout>
 );
 
 export default ViewProduct;

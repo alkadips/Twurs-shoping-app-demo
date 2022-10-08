@@ -1,6 +1,7 @@
 import React from "react";
 import useForm from "./useForm";
 import validate from "./LoginFormValidationRules";
+import Layout from "../../components/Layout";
 const Register = props => {
   const { values, errors, handleChange, handleSubmit } = useForm(
     register,
@@ -10,6 +11,7 @@ const Register = props => {
     alert("Register successfully")
   }
   return (
+    <Layout>
     <div className="section is-fullheight">
       <div className="container">
         <div className="column is-6 is-offset-3">
@@ -65,6 +67,7 @@ const Register = props => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

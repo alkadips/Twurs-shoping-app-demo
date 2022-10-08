@@ -21,8 +21,9 @@ const EditProduct = props => {
     setProduct(initialFormState);
     props.setCurrentProduct(initialFormState);
   };
-
+  if(!product?.name) return null
   return (
+    <Layout title={"Edit Product"}>
     <form style={{textAlign:"center",margin:'0 auto',width:"50%",border:'2px solid',padding:"20px"}}
       onSubmit={event => {
         event.preventDefault();
@@ -85,6 +86,7 @@ const EditProduct = props => {
         </button>
       )}
     </form>
+    </Layout>
   );
 };
 
