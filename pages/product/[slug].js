@@ -1,7 +1,8 @@
 import Layout from "../../components/Layout";
-import data from "../../utils/data";
 import { useRouter } from "next/router";
 import db from "../../utils/db";
+import { toast } from 'react-toastify';
+
 import Product from "../../models/Product";
 import Link from "next/link";
 import Image from "next/image";
