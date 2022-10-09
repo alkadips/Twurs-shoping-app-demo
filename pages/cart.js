@@ -112,4 +112,6 @@ function CartScreen() {
   );
 }
 
-export default dynamic(() => Promise.resolve(CartScreen), { ssr: true });
+export default dynamic(() => Promise.resolve(CartScreen), {
+  ssr: false,
+});
