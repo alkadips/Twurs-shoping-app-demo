@@ -48,7 +48,7 @@ export default function ProductScreen(props) {
               <h1 className="text-lg">{product.name}</h1>
             </li>
             <li>Category: {product.category}</li>
-            <li>Brand: {product.brand}</li>
+            <li className="brand-style">Brand: {product.brand}</li>
             <li>
               {product.rating} of {product.numReviews} reviews
             </li>

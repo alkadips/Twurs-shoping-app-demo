@@ -4,7 +4,7 @@ import Head from "next/head";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Store } from "../utils/Store";
 export default function Layout({ title, children }) {
-  const { state, dispatch } = useContext(Store);
+  const { state } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
   useEffect(() => {
@@ -17,11 +17,14 @@ export default function Layout({ title, children }) {
         <meta name="description" content="Ecommerce" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex min-h-screen flex-col justify-between ">
-        <header>
+      <div className="flex h-screen flex-col justify-between ">
+        <header >
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
               <a className="text-lg font-bold">Twurs</a>
+            </Link>
+            <Link href="/admin/dashboard">
+              <a className="text-lg font-bold">Go To Dashboard</a>
             </Link>
             <div>
               <Link href="/cart">
@@ -40,7 +43,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4">{children}</main>
+        <main className="container m-auto mt-4 px-4 flex-1 overflow-y-auto">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
           Footer
         </footer>

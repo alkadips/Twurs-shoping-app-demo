@@ -79,7 +79,7 @@ function CartScreen() {
                     </td>
                     <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 text-center">
-                      <button onClick={() => removeItemHandler(item)}>
+                      <button type='button' className='default-button' onClick={() => removeItemHandler(item)}>
                         remove
                       </button>
                     </td>

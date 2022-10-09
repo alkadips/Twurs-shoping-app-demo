@@ -46,7 +46,7 @@ export default function AdminProdcutsScreen() {
   });
 
   const createHandler = async () => {
-    if (!window.confirm('Are you sure?')) {
+    if (!window.confirm('Are you sure want to create the product?')) {
       return;
     }
     try {
@@ -154,7 +154,7 @@ export default function AdminProdcutsScreen() {
                       <td className=" p-5 ">{product.rating}</td>
                       <td className=" p-5 ">
                         <Link href={`/admin/product/${product._id}`}>
-                          <a type="button" className="default-button">
+                          <a type="button " className="default-button">
                             Edit
                           </a>
                         </Link>
@@ -162,7 +162,7 @@ export default function AdminProdcutsScreen() {
                         <button
                           onClick={() => deleteHandler(product._id)}
                           className="default-button"
-                          type="button"
+                          type="button "
                         >
                           Delete
                         </button>

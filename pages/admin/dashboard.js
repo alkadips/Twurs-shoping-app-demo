@@ -77,7 +77,7 @@ function AdminDashboardScreen() {
     ],
   };
   return (
-    <Layout title="Admin Dashboard">
+    <Layout title="Admin Dashboard ">
       <div className="grid  md:grid-cols-4 md:gap-5">
         <div>
           <ul>
@@ -98,7 +98,7 @@ function AdminDashboardScreen() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <h1 className="mb-4 text-xl">Admin Dashboard</h1>
+          <Link href='/' className="mb-4 text-xl">Admin Dashboard</Link>
           {loading ? (
             <div>Loading...</div>
           ) : error ? (
@@ -106,22 +106,22 @@ function AdminDashboardScreen() {
           ) : (
             <div>
               <div className="grid grid-cols-1 md:grid-cols-4">
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 bg-sales">
                   <p className="text-3xl">${summary.ordersPrice} </p>
                   <p>Sales</p>
-                  <Link href="/admin/orders">View sales</Link>
+                  <Link  href="/admin/orders ">View sales</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 bg-orders">
                   <p className="text-3xl">{summary.ordersCount} </p>
                   <p>Orders</p>
                   <Link href="/admin/orders">View orders</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 bg-products">
                   <p className="text-3xl">{summary.productsCount} </p>
                   <p>Products</p>
                   <Link href="/admin/products">View products</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 bg-users">
                   <p className="text-3xl">{summary.usersCount} </p>
                   <p>Users</p>
                   <Link href="/admin/users">View users</Link>
