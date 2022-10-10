@@ -75,17 +75,11 @@ function AdminUsersScreen() {
             <li>
               <Link href="/admin/dashboard">Dashboard</Link>
             </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
+          
             <li>
               <Link href="/admin/products">Products</Link>
             </li>
-            <li>
-              <Link href="/admin/users">
-                <a className="font-bold">Users</a>
-              </Link>
-            </li>
+        
           </ul>
         </div>
         <div className="overflow-x-auto md:col-span-3">

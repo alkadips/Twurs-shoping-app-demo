@@ -45,17 +45,11 @@ export default function AdminOrderScreen() {
             <li>
               <Link href="/admin/dashboard">Dashboard</Link>
             </li>
-            <li>
-              <Link href="/admin/orders">
-                <a className="font-bold">Orders</a>
-              </Link>
-            </li>
+          
             <li>
               <Link href="/admin/products">Products</Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
-            </li>
+          
           </ul>
         </div>
         <div className="overflow-x-auto md:col-span-3">

@@ -100,17 +100,13 @@ export default function AdminProdcutsScreen() {
             <li>
               <Link href="/admin/dashboard">Dashboard</Link>
             </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
+          
             <li>
               <Link href="/admin/products">
                 <a className="font-bold">Products</a>
               </Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
-            </li>
+         
           </ul>
         </div>
         <div className="overflow-x-auto md:col-span-3">

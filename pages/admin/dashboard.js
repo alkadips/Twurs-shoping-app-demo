@@ -86,15 +86,11 @@ function AdminDashboardScreen() {
                 <a className="font-bold">Dashboard</a>
               </Link>
             </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
+           
             <li>
               <Link href="/admin/products">Products</Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
-            </li>
+          
           </ul>
         </div>
         <div className="md:col-span-3">
