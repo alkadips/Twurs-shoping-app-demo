@@ -23,7 +23,7 @@ export default function Layout({ title, children }) {
             <Link href="/">
               <a className="text-lg font-bold">Twurs</a>
             </Link>
-            <Link href="/admin/dashboard">
+            <Link href="/admin/products">
               <a className="text-lg font-bold">Go To Dashboard</a>
             </Link>
             <div>
