@@ -98,7 +98,7 @@ export default function AdminProdcutsScreen() {
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/products">Dashboard</Link>
             </li>
           
             <li>
